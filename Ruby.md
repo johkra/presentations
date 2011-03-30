@@ -20,10 +20,11 @@ Hello World
     end
 
     say_hello "world"
+    #Hello, world
 
 ---
 
-# Dynamism (1)
+# Dynamic behaviour (1)
 
 Message passing:
 
@@ -35,3 +36,43 @@ Message passing:
     
     "hello".send "length"
     => 5
+
+---
+
+# Dynamic behaviour (2)
+
+Define classes at run time:
+
+    !ruby
+    Dog = Class.new
+    Dog.send(:define_method, "bark",
+        lambda { puts "Woof!" })
+
+    waldo = Dog.new
+    waldo.bark
+    #Woof!
+
+---
+
+# Dynamic behaviour (3)
+
+Open classes:
+
+    !ruby
+    class Fixnum
+      alias_method :old_to_s, :to_s
+      def to_s
+        if self == 4 then "5"
+        else old_to_s end
+      end
+    end
+
+    2 + 2
+    #=>5
+
+---
+
+# Advantages
+
+* Domain specific languages
+* Concise code thanks to "magic"
