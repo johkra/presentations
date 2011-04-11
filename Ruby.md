@@ -3,11 +3,12 @@ Ruby
 
 ---
 
-Highly dynamic language
+Ruby
+----
 
-In tradition of SmallTalk and Lisp
-
-Popular for scripting and web development
+* Highly dynamic language
+* In tradition of SmallTalk and Lisp
+* Popular for scripting and web development
 
 ---
 
@@ -30,12 +31,12 @@ Message passing:
 
     !ruby
     1 + 1
-    => 2
+    #=> 2
     1.send(:+, 1)
-    => 2
+    #=> 2
     
     "hello".send "length"
-    => 5
+    #=> 5
 
 ---
 
@@ -75,4 +76,19 @@ Open classes:
 # Advantages
 
 * Domain specific languages
+    - Sinatra, Sequel
 * Concise code thanks to "magic"
+* Less repetition (DRY)
+* Generally more flexible and faster to develop
+* REPL
+
+---
+
+# Disadvantages
+
+* Static verification very difficult
+    - testing to prevent trivial errors
+* (Significantly) Slower
+    - Rewrite parts in C/Java
+    - JIT can be very fast (LuaJIT)
+* Different mindset necessary -> Training
