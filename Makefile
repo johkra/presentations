@@ -6,3 +6,6 @@ rubypdf:
 
 sinatra:
 	landslide Sinatra.md -t landslide-theme -d sinatra.html
+
+sequel:
+	landslide Sequel.md -t landslide-theme -d sequel.html
