@@ -7,7 +7,9 @@ Ruby
 ----
 
 * Highly dynamic language
-* In tradition of SmallTalk and Lisp
+* Inspired by Perl, SmallTalk and Lisp
+    - Everything is an Object
+    - Lambda, Closures
 * Popular for scripting and web development
 
 ---
@@ -70,6 +72,25 @@ Open classes:
 
     2 + 2
     #=>5
+
+---
+
+# Dynamic behaviour (4)
+
+methods_missing:
+
+    !ruby
+    class Factorial
+      def method_missing(method, *args)
+        match = method.to_s.match /f(\d+)!/
+        return super if match.nil?
+        $1.to_i.downto(1).reduce(:*)
+      end
+    end
+
+    fact = Factorial.new
+    fact.f25!
+    #=> 15511210043330985984000000
 
 ---
 
