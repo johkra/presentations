@@ -9,7 +9,7 @@ Ruby
 * Highly dynamic language
 * Inspired by Perl, SmallTalk and Lisp
     - Everything is an Object
-    - Lambda, Closures
+    - Higher Order functions
 * Popular for scripting and web development
 
 ---
